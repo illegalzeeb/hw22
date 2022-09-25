@@ -39,7 +39,90 @@
 
 # код должен выполняться не выбрасывая исключений
 
-# TODO напишите Ваш код здесь
+from abc import ABC, abstractmethod
+
+
+class Transport(ABC):
+
+    @abstractmethod
+    def ignition(self):
+        pass
+
+    @abstractmethod
+    def shut_down(self):
+        pass
+
+    @abstractmethod
+    def drive(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+
+class Boat(Transport):
+    def ignition(self):
+        print('Boat engine starts')
+
+    def shut_down(self):
+        print('Boat engine stops')
+
+    def drive(self):
+        print('Boat moving toward destination')
+
+    def stop(self):
+        print('Boat stops')
+
+
+class Car(Transport):
+    def ignition(self):
+        print('Car engine starts')
+
+    def shut_down(self):
+        print('Car engine stops')
+
+    def drive(self):
+        print('Car moving toward destination')
+
+    def stop(self):
+        print('Car stops')
+
+
+class Electroscooter(Transport):
+    def ignition(self):
+        print('Scooter engine starts')
+
+    def shut_down(self):
+        print('Scooter engine stops')
+
+    def drive(self):
+        print('Scooter moving toward destination')
+
+    def stop(self):
+        print('Scooter stops')
+
+
+class Person:
+
+    def use_transport(self, transport: Transport):
+        transport.ignition()
+        transport.drive()
+        transport.stop()
+        transport.shut_down()
+
+
+if __name__ == '__main__':
+    boat = Boat()
+    car = Car()
+    kamikadze = Electroscooter()
+
+    person = Person()
+    person.use_transport(boat)
+    print('=' * 10)
+    person.use_transport(car)
+    print('=' * 10)
+    person.use_transport(kamikadze)
 
 
 # Отрезок кода для самопроверки.

@@ -18,6 +18,7 @@ class Obj:
     # - дерева
     # - ловушки
 
+class Warrior:
     def attack(self):
         pass
 
@@ -27,6 +28,7 @@ class Obj:
     def move(self):
         pass
 
+class Healer:
     def healer_defense(self):
         pass
 
@@ -36,13 +38,15 @@ class Obj:
     def heal(self):
         pass
 
+class Tree:
     def tree_defense(self):
         pass
 
     def on_fire(self):
         pass
 
-    def trap_attack(self):
+class Trap:
+     def trap_attack(self):
         print("It's a trap!")
 
 if __name__ == '__main__':
